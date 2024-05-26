@@ -62,7 +62,7 @@ console.log(findPalindrome(0,str))
 
 //multiple recursion calls
 
-// fibonacci number
+// find fibonacci number
 
 let n = 4;
 
