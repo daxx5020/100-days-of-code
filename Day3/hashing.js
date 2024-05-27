@@ -30,3 +30,93 @@
 
 */
 
+
+//find count of the alphabete from string
+
+/*
+
+We can get ASCII with string.charCodeAt(index); in javascript
+
+*/
+
+// let str = "abcdabehf";
+// let str2 = "c";
+// const characterHashing = function(str,str2){
+//     let hash = Array(26).fill(0);
+
+//     for (let i = 0; i < str.length; i++){
+//         hash[str.charCodeAt(i) - 'a'.charCodeAt(0)]++;
+//     }
+
+//     return hash[str2.charCodeAt(0) - 'a'.charCodeAt(0)];
+// }
+
+// console.log(characterHashing(str,str2))
+
+
+//what if we do not assign complete 26 characters of array and assign more than that and changes in code that do not substract that also runs perfectly
+
+
+// let str3 = "abcdabehf";
+// let str4 = "c";
+// const characterHashingWithoutSubstact = function(str3,str4){
+//     let hash = Array(256).fill(0);
+
+//     for (let i = 0; i < str3.length; i++){
+//         hash[str3.charCodeAt(i)]++;
+//     }
+
+//     return hash[str4.charCodeAt(0)];
+// }
+
+// console.log(characterHashingWithoutSubstact(str3,str4))
+
+
+
+
+//let find number count from array with map....becasue of map we do not have to declare long arrays we will insert count of that num which is in the array.
+
+// let arr = [1,2,3,1,3,2,12,1];
+// let num = 10;
+// const findByMap = function(arr,num){
+//     let map = new Map();
+//     let n = arr.length;
+
+//     for (let i = 0; i < n; i++){
+//         map.set(arr[i],(map.get(arr[i]) || 0) + 1)
+//     }
+
+//     return map.get(num) || 0;
+// }
+
+// console.log(findByMap(arr,num))
+
+
+
+//map with character hashing
+
+let str5 = "abcdabehfa";
+let str6 = "a";
+const findByMapInCharacters = function(str5,str6){
+    let map = new Map();
+    let n = str5.length;
+
+    for (let i = 0; i < n; i++){
+        map.set(str5[i],(map.get(str5[i]) || 0) + 1)
+    }
+
+    return map.get(str6) || 0;
+}
+
+console.log(findByMapInCharacters(str5,str6))
+
+
+/*
+
+    Hashing:-
+    
+    1. Division Method
+    2. Folding Method
+    3. Mis Sequence Method
+
+*/
