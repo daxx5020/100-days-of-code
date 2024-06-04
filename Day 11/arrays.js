@@ -9,22 +9,22 @@ let arr = [4,1,2,3,1];
 let target = 5;
 
 
-// const find2Sum = function (arr,target){
-//     let map = new Map();
-//     for (let i = 0; i< arr.length; i++){
-//         let a = arr[i];
-//         let more = target-a;
+const find2Sum = function (arr,target){
+    let map = new Map();
+    for (let i = 0; i< arr.length; i++){
+        let a = arr[i];
+        let more = target-a;
 
-//         if(map.has(more)){
-//             return "YES";
-//         }
-//         map.set(a,i);
-//     }
-//     return "NO";
-// }
+        if(map.has(more)){
+            return "YES";
+        }
+        map.set(a,i);
+    }
+    return "NO";
+}
 
 
-// console.log(find2Sum(arr,target))
+console.log(find2Sum(arr,target))
 
 
 
@@ -36,22 +36,22 @@ let target = 5;
 */
 
 
-// const find2SumIndex = function (arr,target){
-//     let map = new Map();
-//     for (let i = 0; i< arr.length; i++){
-//         let a = arr[i];
-//         let more = target-a;
+const find2SumIndex = function (arr,target){
+    let map = new Map();
+    for (let i = 0; i< arr.length; i++){
+        let a = arr[i];
+        let more = target-a;
 
-//         if(map.has(more)){
-//             return [map.get(more),i];
-//         }
-//         map.set(a,i);
-//     }
-//     return [-1,-1];
-// }
+        if(map.has(more)){
+            return [map.get(more),i];
+        }
+        map.set(a,i);
+    }
+    return [-1,-1];
+}
 
 
-// console.log(find2SumIndex(arr,target))
+console.log(find2SumIndex(arr,target))
 
 
 
@@ -82,3 +82,42 @@ const find2SumOptimal = function(arr,target){
 
 
 console.log(find2SumOptimal(arr,target))
+
+
+
+
+
+
+
+//sort array which have only 0, 1 and 2.
+
+let arr2 = [0,0,1,2,1,1,2,2,2,2,0,1,2,2,0,1]
+
+const sortArray = function(arr){
+    let n = arr.length;
+    let low = 0;
+    let mid = 0;
+    let high = n-1;
+
+    while(mid <= high){
+        if (arr[mid] == 0){
+            temp = arr[mid];
+            arr[mid] = arr[low];
+            arr[low] = temp;
+            low++;
+            mid++;
+        }
+        else if(arr[mid] == 1){
+            mid++;
+        }
+        else{
+            temp = arr[mid];
+            arr[mid] = arr[high];
+            arr[high] = temp;
+            high--;
+        }
+    }
+    return arr;
+}
+
+console.log(sortArray(arr2))
