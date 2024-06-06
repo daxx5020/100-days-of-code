@@ -1,4 +1,4 @@
-// Best time to buy and sell sticks. 
+// Best time to buy and sell sticks. DP
 
 let prices = [4,3,1,5,7,5,2,3]
 
@@ -20,7 +20,7 @@ console.log(maximumProfit(prices));
 
 
 
-//Rearrange the array with positives and negatives
+//Rearrange the array with positives and negatives positive and negative numbers count must be same
 
 //   *** BruteForce Method ***
 
@@ -73,7 +73,8 @@ const rearrageArrayBetter = function (arr){
 console.log(rearrageArrayBetter(arr));
 
 
-//Rearrange the array with diffrent count of positive and negrative numbers
+
+// Rearrange the array with diffrent count of positive and negrative numbers
 
 let array = [8,-3,-5,4,5,6,-6,-3,-6,-10,-9]
 
