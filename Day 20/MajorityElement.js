@@ -2,7 +2,7 @@
 
 // *** Bruteforce Solution ***
 
-let arr = [2,2,2,2,2,1,3,1,1,3,1,1]
+let arr =  [-1, -1, 2, 0, 1]
 
 const majorityElement = function (arr){
     let ls = [];
@@ -36,7 +36,7 @@ console.log(majorityElement(arr))
 // *** Better Solution  ***
 
 
-let majorityElementOptimal = function (arr){
+let majorityElementBetter = function (arr){
     let cnt1 = 0;
     let cnt2 = 0;
     let el1 = Number.MIN_VALUE;
@@ -75,4 +75,41 @@ let majorityElementOptimal = function (arr){
 }
 
 
-console.log(majorityElementOptimal(arr))
+console.log(majorityElementBetter(arr))
+
+
+
+// *** Optimal Solution ***
+
+
+ const majorityElementOptimal = function (arr){
+    let ans = [];
+    if (arr.length < 3) return ans;
+
+    arr.sort((a,b) => a-b)
+    for (let i = 0; i < arr.length - 2; i++){
+        if (i > 0 && arr[i] == arr[i-1]) continue;
+        let j = i+1;
+        let k = arr.length-1;
+        while (j < k){
+            let sum = arr[i] + arr[j] + arr[k];
+            if (sum < 0){
+                j++;
+            }
+            else if(sum > 0){
+                k--;
+            }
+            else{
+                ans.push([arr[i], arr[j], arr[k]]);
+                j++;
+                k--;
+                
+                while ( j < k && arr[j] == arr[j-1]) j++;
+                while ( j < k && arr[k] == arr [k+1]) k--;
+            }
+        }
+    }
+    return ans;
+ }
+
+ console.log(majorityElementOptimal(arr))
