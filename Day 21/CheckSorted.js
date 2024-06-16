@@ -3,10 +3,15 @@
 let nums = [3,4,5,1,2];
 
 
-const isSorted = function(nums){
-    for(let i = 0; i < nums.length; i++){
-        for (j = i+1; j < nums.length; j++){
-            if (nums[j] < nums[i] ){
+const checkRotateSorted = function (nums){
+    
+    let n = nums.length;
+    let count = 0;
+
+    for (let i = 0; i < n; i++){
+        if (nums[i] > nums[(i+1) % n ]){
+            count++;
+            if (count > 1){
                 return false;
             }
         }
@@ -14,5 +19,4 @@ const isSorted = function(nums){
     return true;
 }
 
-
-console.log(isSorted(nums))
+console.log(checkRotateSorted(nums))
