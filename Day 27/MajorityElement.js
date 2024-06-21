@@ -1,4 +1,4 @@
-// Find majority element
+// Find majority element from array
 
 let nums = [2,2,1,1,1,2,2]
 
