@@ -31,3 +31,8 @@ const setMatrixZeroesBruteforce = function (matrix){
 }
 
 console.log(setMatrixZeroesBruteforce(matrix))
+
+
+
+// *** Optimal Solution ***
+
