@@ -23,9 +23,3 @@ const subArraySumBruteForce = function (nums,k){
 }
 
 console.log(subArraySumBruteForce(nums,k))
-
-
-
-// *** Better Solution *** 
-
-
