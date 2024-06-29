@@ -84,6 +84,6 @@ const pasclaTriangleOptimal = function (numRows){
         ans.push(generateRow(i));
     }
     return ans;
-}1
+}
 
 console.log(pasclaTriangleOptimal(numRows))
