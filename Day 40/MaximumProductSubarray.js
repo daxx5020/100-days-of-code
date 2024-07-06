@@ -6,23 +6,23 @@ let nums = [2,3,-2,4];
     Bruteforce Solution
 */
 
-// const maximumProductSubarrayBruteForce = function (nums){
-//     let n = nums.length;
-//     let maxi = Number.MIN_VALUE;
-//     for (let i = 0; i < n;i++){
-//         for (let j = i; j < n; j++){
-//             let product = 1;
-//             for (k = i; k < j; k++){
-//                 product = product * nums[k]
-//             }
-//             maxi = Math.max(maxi,product)
-//         }
-//     }
-//     return maxi;
-// }
+const maximumProductSubarrayBruteForce = function (nums){
+    let n = nums.length;
+    let maxi = Number.MIN_VALUE;
+    for (let i = 0; i < n;i++){
+        for (let j = i; j < n; j++){
+            let product = 1;
+            for (k = i; k < j; k++){
+                product = product * nums[k]
+            }
+            maxi = Math.max(maxi,product)
+        }
+    }
+    return maxi;
+}
 
 
-// console.log(maximumProductSubarrayBruteForce(nums))
+console.log(maximumProductSubarrayBruteForce(nums))
 
 
 
@@ -30,21 +30,26 @@ let nums = [2,3,-2,4];
     Better Solution
 */
 
-// const maximumProductSubarrayBetter = function (nums){
-//     let n = nums.length;
-//     let maxi = -Infinity;
-//     for (let i = 0; i < n;i++){
-//         let product = 1;
-//         for (let j = i; j < n; j++){
-//             product = product * nums[j];
-//             maxi = Math.max(maxi,product)
-//         }
-//     }
-//     return maxi;
-// }
+const maximumProductSubarrayBetter = function (nums){
+    let n = nums.length;
+    let maxi = -Infinity;
+    for (let i = 0; i < n;i++){
+        let product = 1;
+        for (let j = i; j < n; j++){
+            product = product * nums[j];
+            maxi = Math.max(maxi,product)
+        }
+    }
+    return maxi;
+}
 
 
-// console.log(maximumProductSubarrayBetter(nums))
+console.log(maximumProductSubarrayBetter(nums))
+
+
+/*
+    Optimal Solution
+*/
 
 
 const maximumProductSubarrayOptimal = function (nums){
