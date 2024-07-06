@@ -18,6 +18,9 @@ const missingAndRepeating = function(arr){
         }
     }
 
+    let missing = -1;
+    let repeating = -1;
+
     for (let i = 1; i <= n; i++) {
         if (hash[i] === undefined) {
             missing = i;
@@ -26,7 +29,7 @@ const missingAndRepeating = function(arr){
         }
     }
 
-    return { missing, repeating };
+  return [repeating, missing];
 }
 
 
