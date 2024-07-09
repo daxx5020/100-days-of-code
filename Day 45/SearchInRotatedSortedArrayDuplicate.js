@@ -1,7 +1,8 @@
-// Search in rotated sorted array
+// Search in rotated sorted array with duplicates
 
-let nums = [4,5,6,7,0,1,2]
-let target = 6;
+ 
+let nums = [2,5,6,0,0,1,2];
+let target = 0;
 
 /*
     Bruteforce Solution
@@ -12,10 +13,10 @@ const searchInArrayBruteForce = function (nums,target){
     let n = nums.length;
     for (let i = 0; i < n; i++){
         if (nums[i] === target){
-            return i;
+            return true;
         }
     }
-    return -1;
+    return false;
 }
 
 console.log(searchInArrayBruteForce(nums,target))
@@ -33,7 +34,14 @@ const searchInArrayBetter = function (nums,target){
 
     while (low <= high){
         let mid = Math.floor((low+high) / 2);
-        if (nums[mid] === target) return mid;
+        if (nums[mid] === target) return true;
+
+        if (nums[low] === nums[mid] && nums[mid] === nums[high]){
+            low = low + 1;
+            high = high -1;
+            continue;
+        }
+        
         if (nums[low] <= nums[mid]){
             if (nums[low] <= target && target <= nums[mid]){
                 high = mid - 1;
@@ -51,7 +59,7 @@ const searchInArrayBetter = function (nums,target){
             }
         }
     }
-    return -1;
+    return false;
 }
 
 console.log(searchInArrayBetter(nums,target))
