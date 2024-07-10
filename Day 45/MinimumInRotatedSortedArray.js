@@ -29,6 +29,29 @@ console.log(findMinimumBruteForce(nums));
 
 const findMinimumBetter = function (nums){
     let n = nums.length;
+    let low = 0;
+    let high = n - 1;
+    let ans = Infinity;
+
+    while(low <= high){
+        let mid = Math.floor((high + low) / 2);
+
+        // If one half is already sorted then
+        if (nums[low] <= nums[high]){
+            ans = Math.min(ans,nums[low]);
+            break;
+        }
+        
+        if (nums[low] <= nums[mid]){
+            ans = Math.min(ans,nums[low]);
+            low = mid+1;
+        }
+        else{
+            ans = Math.min(ans,nums[mid]);
+            high = mid-1;
+        }
+    }
+    return ans;
 }
 
 
