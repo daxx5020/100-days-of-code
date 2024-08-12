@@ -12,6 +12,8 @@ const detectLoop = function(head){
         if (mpp.has(temp)){
             return true;
         }
+        mpp.set(temp,true);
+        temp = temp.next;
     }
     return false;
 }
