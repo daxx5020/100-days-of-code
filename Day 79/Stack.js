@@ -1,10 +1,8 @@
-// *** Stack and Queue ***
+// *** Stack ***
 
 /*
-    Stack works with LIFO. (Last in first out)
-    Queue works with FIFO. (First in first out)
+    Implement stack using arrays
 */
-
 
 class Stack {
     constructor() {
@@ -47,7 +45,6 @@ class Stack {
     }
 }
 
-// Main execution
 const s = new Stack();
 s.push(6);
 s.push(3);
