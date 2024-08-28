@@ -53,7 +53,6 @@ function infixToPostfix(s) {
     return result;
 }
 
-// Test the function
 let exp = "(p+q)*(m-n)";
 console.log("Infix expression: " + exp);
 infixToPostfix(exp);
