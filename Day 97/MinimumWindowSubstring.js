@@ -38,6 +38,9 @@ const minWindowBruteForce = function(s,t){
 }
 
 
+/*
+    Optimal solution
+*/
 
 const minWindow = function(s,t){
     let minLen = Number.MAX_SAFE_INTEGER;
